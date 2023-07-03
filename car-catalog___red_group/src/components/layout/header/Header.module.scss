@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  > a {
+    margin: 0 10px;
+    color: #fff;
+    transition: color 0.4s ease-in-out;
+    font-weight: bold;
+    padding: 20px;
+
+    &:hover {
+      color: black;
+    }
+    &.active {
+      color: black;
+    }
+  }
+}

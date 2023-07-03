@@ -1,0 +1,22 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "name": "Toyota",
+      "price": 22000,
+      "image": "http://localhost:4200/image/1.jpg"
+    },
+    {
+      "id": 1,
+      "name": "VW",
+      "price": 18000,
+      "image": "http://localhost:4200/image/2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Reno",
+      "price": 12000,
+      "image": "http://localhost:4200/image/3.jpg"
+    }
+  ]
+}
