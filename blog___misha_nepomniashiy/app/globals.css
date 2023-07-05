@@ -118,14 +118,17 @@ header {
 }
 
 header a {
-  padding: 10px 20px;
+  padding: 5px 20px;
   font-size: 22px;
   font-weight: bold;
-  color: #ffffff;
+  color: #bcbcbc;
 }
 
 header a:hover {
-  color: #dedede;
+  color: #ffffff;
+}
+header a.active {
+  color: #ffffff;
 }
 
 footer {
@@ -149,6 +152,23 @@ main a:hover {
 .active {
   color: var(--primary-glow);
   cursor: default;
+}
+form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+form button {
+  background-color: black;
+  cursor: pointer;
+  color: white;
+  border: none;
+  padding: 0 10px;
+}
+
+input[type="search"] {
+  padding: 0.5rem 1rem;
 }
 
 @media (prefers-color-scheme: dark) {

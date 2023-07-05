@@ -1,31 +1,25 @@
-import Link from "next/link";
+"use client";
 
-async function getData() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    next: {
-      revalidate: 60,
-    },
-  });
+import { Posts, PostSearch } from "@/components";
+import { getAllPosts } from "@/services/getPosts";
+import { useEffect, useState } from "react";
 
-  if (!response.ok) throw new Error("Enable to fetch posts");
+export default function Blog() {
+  const [posts, setPosts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  return response.json();
-}
-
-export default async function Blog() {
-  const posts = await getData();
+  useEffect(() => {
+    getAllPosts()
+      .then(setPosts)
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
     <>
       <h1>Blog page</h1>
+      <PostSearch onSearch={setPosts} />
 
-      <ul>
-        {posts?.map((post: any) => (
-          <li key={post.id}>
-            <Link href={`/blog/${post.id}`}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
+      {loading ? <h3> Loading... </h3> : <Posts posts={posts} />}
     </>
   );
 }
