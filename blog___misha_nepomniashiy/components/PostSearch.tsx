@@ -1,4 +1,4 @@
-import { getPostsBySearch } from "@/services/getPosts";
+import { getPostsBySearch, getPostsBySearchFromLocalAPI } from "@/services";
 import { useState, FormEventHandler } from "react";
 
 type Props = {
@@ -9,8 +9,8 @@ export const PostSearch = ({ onSearch }: Props) => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
-
-    const posts = await getPostsBySearch(search);
+    //Info, current request based on local Next.js API we also could request data from third-party API using getPostsBySearch()
+    const posts = await getPostsBySearchFromLocalAPI(search);
 
     onSearch(posts);
   };

@@ -1,7 +1,7 @@
 "use client";
 
 import { Posts, PostSearch } from "@/components";
-import { getAllPosts } from "@/services/getPosts";
+import { getAllPosts, getAllPostsFromLocalAPI } from "@/services";
 import { useEffect, useState } from "react";
 
 export default function Blog() {
@@ -9,7 +9,8 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getAllPosts()
+    //Info, current request based on local Next.js API  we also could request data from third-party API using getAllPosts()
+    getAllPostsFromLocalAPI()
       .then(setPosts)
       .finally(() => setLoading(false));
   }, []);
