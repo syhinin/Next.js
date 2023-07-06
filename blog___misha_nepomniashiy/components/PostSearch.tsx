@@ -1,3 +1,4 @@
+"use client";
 import { getPostsBySearch, getPostsBySearchFromLocalAPI } from "@/services";
 import { useState, FormEventHandler } from "react";
 
