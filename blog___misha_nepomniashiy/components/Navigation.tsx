@@ -37,7 +37,7 @@ const Navigation = ({ navLinks }: NavigationProps) => {
       {session?.data && <Link href="/profile">Profile</Link>}
 
       {session?.data ? (
-        //Info redirect to home after click  
+        //Tips redirect to home after click  
         <Link href="#" onClick={() => signOut({callbackUrl: '/'})}>
           Sign Out
         </Link>

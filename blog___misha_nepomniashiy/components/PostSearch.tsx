@@ -10,7 +10,7 @@ export const PostSearch = ({ onSearch }: Props) => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
-    //Info, current request based on local Next.js API we also could request data from third-party API using getPostsBySearch()
+    //Tips, current request based on local Next.js API we also could request data from third-party API using getPostsBySearch()
     const posts = await getPostsBySearchFromLocalAPI(search);
 
     onSearch(posts);

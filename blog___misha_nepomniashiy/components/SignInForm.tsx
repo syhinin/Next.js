@@ -20,6 +20,9 @@ const SignInForm = () => {
 
     if (res && !res.error) {
       router.push("/profile");
+      //Tips, back and reload for routing
+      // router.back()
+      // router.reload()
     } else {
       console.log(res);
     }

@@ -4,7 +4,7 @@ async function getData(id: string) {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${id}`,
     {
-      //Info! by default next have cashing, using revalidate we telling next.js how often we would like to refetch data
+      //Tips by default next have cashing, using revalidate we telling next.js how often we would like to refetch data
       next: {
         revalidate: 60,
       },
